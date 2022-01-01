@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+
+        <script src="index.js" defer></script>
+
+        <title>Login</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="title">Sign in</h1>
+            <form class="form" autocomplete="off" novalidate action="/submitted.html">
+                <div class="form-box email-box">
+                    <label for="email">Email</label>
+                    <div class="input-box email-input-box">
+                        <input id="email" type="email" placeholder="smart@cookie.com" />
+                    </div>
+                    <button class="form-forgot forgot-email" type="button">
+                        Forgot email&nbsp;?
+                    </button>
+                </div>
+                <div class="form-box password-box">
+                    <label for="password">Password</label>
+                    <div class="input-box password-input-box">
+                        <input id="password" type="password" />
+                    </div>
+                    <button class="form-forgot forgot-password" type="button">
+                        Forgot password&nbsp;?
+                    </button>
+                </div>
+                <div class="form-box submit-box">
+                    <button class="submit">Sign in</button>
+                </div>
+            </form>
+            <hr class="separator" />
+            <button class="create-account">Create account</button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,321 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-primary-100: hsl(220, 71%, 15%);
+    --clr-primary-200: hsl(220, 70%, 20%);
+    --clr-primary-300: hsl(220, 75%, 25%);
+    --clr-primary-400: hsl(220, 75%, 30%);
+    --clr-primary-500: hsl(220, 75%, 40%);
+    --clr-primary-600: hsl(220, 80%, 50%);
+    --clr-primary-700: hsl(220, 90%, 60%);
+    --clr-primary-800: hsl(220, 90%, 65%);
+    --clr-primary-900: hsl(220, 100%, 70%);
+
+    --clr-error-300: hsl(0, 75%, 25%);
+
+    --clr-neutral-100: #0a0a0a;
+    --clr-neutral-200: #191919;
+    --clr-neutral-300: #272727;
+    --clr-neutral-500: #929292;
+    --clr-neutral-700: #c4c4c4;
+    --clr-neutral-800: #e3e3e3;
+    --clr-neutral-900: #f2f2f2;
+
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-bold: 700;
+}
+
+::selection {
+    background-color: var(--clr-primary-400);
+    color: var(--clr-neutral-900);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    background-color: var(--clr-neutral-900);
+    color: var(--clr-neutral-100);
+
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.title {
+    margin-top: 0;
+    margin-bottom: 1em;
+
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 1.5em;
+}
+
+.input-box {
+    width: 100%;
+}
+
+.input-box > input {
+    width: 100%;
+}
+
+.form input {
+    padding: 0.4em;
+    border-radius: 0.4em;
+    font-size: 1rem;
+    font: unset;
+
+    background-color: transparent;
+    border: 1px solid var(--clr-neutral-700);
+    color: var(--clr-neutral-100);
+    
+    position: relative;
+}
+
+.form .incorrect input {
+    border: 1px solid var(--clr-neutral-500);
+}
+
+.form input:focus {
+    outline: none;
+    border: 1px solid var(--clr-neutral-300);
+}
+
+
+.form .incorrect .input-box {
+    position: relative;
+
+    margin-top: .3em;
+}
+
+.form .incorrect .input-box::after {
+    content: "clear";
+
+    --size: 1.25rem;
+
+    display: inline-flex;
+
+    position: absolute;
+    top: 50%;
+    right: .5em;
+
+    width: var(--size);
+    height: var(--size);
+
+    font-family: "Material Icons";
+    font-size: var(--size);
+    line-height: var(--size);
+    color: var(--clr-error-300);
+
+    transform: translateY(-50%);
+}
+
+.form .incorrect .input-box::before {
+    content: "";
+
+    display: none;
+
+    position: absolute;
+    top: calc(100% - 1px);
+    right: .4em;
+    z-index: 10;
+
+    max-width: 80%;
+    padding: .3em;
+    background-color: var(--clr-error-300);
+    border-radius: 0 0 .3em .3em;
+
+    font-weight: var(--fw-bold);
+    font-size: .9rem;
+    color: var(--clr-neutral-900);
+
+    /* box-shadow: 0 0 .5em black; */
+    pointer-events: none;
+}
+
+.form .incorrect .input-box:focus-within:before {
+    display: revert;
+}
+
+.form .incorrect .email-input-box::before {
+    content: "Invalid email";
+}
+
+.form .incorrect .password-input-box::before {
+    content: "A stronger password is required";
+}
+
+.form-forgot {
+    all: unset;
+    box-sizing: border-box;
+
+    display: inline-block;
+
+    --inline-padding: 0.3em;
+    width: max-content;
+    padding: 0.1em var(--inline-padding);
+    margin-top: 0.3em;
+    border-radius: 0.1em;
+
+    font-weight: var(--fw-bold);
+    font-size: 0.9rem;
+    color: var(--clr-primary-500);
+
+    transform: translateX(calc(var(--inline-padding) * -1));
+
+    cursor: pointer;
+}
+
+.form-forgot:focus {
+    background-color: var(--clr-neutral-800);
+    color: var(--clr-primary-400);
+}
+
+.submit-box {
+    margin-bottom: 0;
+}
+
+.submit {
+    all: unset;
+    box-sizing: border-box;
+
+    display: block;
+
+    width: 100%;
+    padding: 0.3em;
+    background-color: var(--clr-primary-500);
+    border-radius: 0.4em;
+
+    text-align: center;
+    color: var(--clr-neutral-900);
+    font-weight: var(--fw-bold);
+}
+
+.submit:hover {
+    background-color: var(--clr-primary-600);
+
+    cursor: pointer;
+}
+
+.submit:focus {
+    outline: 2px solid var(--clr-neutral-900);
+    outline-offset: -4px;
+}
+
+.create-account {
+    all: unset;
+    box-sizing: border-box;
+
+    display: block;
+
+    width: 100%;
+    padding: 0.3em;
+    background: transparent;
+    border-radius: 0.4em;
+
+    text-align: center;
+    color: var(--clr-primary-500);
+    font-weight: var(--fw-bold);
+
+    cursor: pointer;
+}
+
+.create-account:hover {
+    background-color: var(--clr-neutral-800);
+}
+
+.create-account:focus {
+    outline: 2px solid;
+    outline-offset: -2px;
+}
+
+.separator {
+    position: relative;
+
+    margin: 2em 0;
+
+    color: var(--clr-neutral-700);
+}
+
+.separator::after {
+    content: "or";
+
+    display: inline-block;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    padding: 0 1em;
+
+    background-color: var(--clr-neutral-900);
+
+    color: var(--clr-neutral-100);
+
+    transform: translate(-50%, -50%);
+}
+
+@media (min-width: 35em) {
+    body {
+        flex-direction: row;
+    }
+
+    body > * {
+        width: 100%;
+    }
+
+    .container {
+        flex-grow: revert;
+
+        height: max-content;
+        max-width: 400px;
+        margin-top: 5rem;
+        padding: 2em;
+        border: 1px solid var(--clr-neutral-700);
+        border-radius: 1em;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --clr-primary-900: hsl(210, 70%, 15%);
+        --clr-primary-800: hsl(210, 70%, 20%);
+        --clr-primary-700: hsl(210, 75%, 25%);
+        --clr-primary-600: hsl(210, 75%, 30%);
+        --clr-primary-500: hsl(210, 75%, 40%);
+        --clr-primary-400: hsl(210, 80%, 50%);
+        --clr-primary-300: hsl(210, 90%, 60%);
+        --clr-primary-200: hsl(210, 90%, 65%);
+        --clr-primary-100: hsl(210, 100%, 70%);
+
+        --clr-error-300: hsl(0, 75%, 50%);
+
+        --clr-neutral-900: #0a0a0a;
+        --clr-neutral-800: #191919;
+        --clr-neutral-700: #272727;
+        --clr-neutral-500: #929292;
+        --clr-neutral-300: #c4c4c4;
+        --clr-neutral-200: #e3e3e3;
+        --clr-neutral-100: #f2f2f2;
+    }
+}
