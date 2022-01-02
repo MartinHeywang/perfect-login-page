@@ -130,9 +130,7 @@ body {
     transform: translateY(-50%);
 }
 
-.form .incorrect .input-box::before {
-    content: "";
-
+.input-box-wrong {
     display: none;
 
     position: absolute;
@@ -149,20 +147,11 @@ body {
     font-size: .9rem;
     color: var(--clr-neutral-900);
 
-    /* box-shadow: 0 0 .5em black; */
     pointer-events: none;
 }
 
-.form .incorrect .input-box:focus-within:before {
+.incorrect .input-box-wrong {
     display: revert;
-}
-
-.form .incorrect .email-input-box::before {
-    content: "Invalid email";
-}
-
-.form .incorrect .password-input-box::before {
-    content: "A stronger password is required";
 }
 
 .form-forgot {
