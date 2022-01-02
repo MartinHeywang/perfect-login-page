@@ -26,6 +26,15 @@ function submit(event) {
     }
 }
 
+/* 
+    DISCLAIMER!
+
+    These functions use as only check a regex. 
+    
+    The only purpose was to create a validation function, 
+    but some valid email may result in a validation error, 
+    because being accurate here in this project was not the goal.
+*/
 function checkEmail(email) {
     const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     return regex.test(email);
